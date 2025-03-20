@@ -1,0 +1,42 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: edqnLMCSf31.
+      MYSQL_DATABASE: rancho_admin
+    networks:
+      - rancho-net
+    ports:
+      - 3306:3306
+    volumes:
+      - db-rancho:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: edqnLMCSf31.
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - rancho-net
+  django:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    container_name: django
+    volumes:
+      - ../:/app
+    ports:
+      - 80:80
+    command: sleep infinity
+    networks:
+      - rancho-net
+volumes:
+  db-rancho:
+networks:
+  rancho-net:
+    driver: bridge
