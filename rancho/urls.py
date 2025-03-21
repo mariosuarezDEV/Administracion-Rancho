@@ -17,9 +17,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+import django_unicorn
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("unicorn/", include("django_unicorn.urls")),
+    path("", include("dashboard.urls"), name="dashboard"),
     #path("forma_pago", include("forma_pago.urls"), name="forma_pago"),
     #path("catalogo_cuenta", include("catalogo_cuenta.urls"), name="catalogo_cuenta"),
 ]

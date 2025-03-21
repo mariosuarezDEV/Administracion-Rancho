@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load unicorn %}
+{% unicorn_scripts %}
+{% csrf_token %}
+{% block titulo %}
+  Dashboard
+{% endblock %}
+{% block content %}
+  <h1 class="fs-2">Bienvenido <span class="text-primary">@</span><span class="text-primary text-decoration-underline">{{ user.first_name }}</span> a tu dashboard</h1>
+  <div class="row">
+    {% unicorn 'view_stats' %}
+  </div>
+{% endblock %}

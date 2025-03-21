@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>
+      {% block titulo %}
+
+      {% endblock %}
+    </title>
+  </head>
+
+  <body class="bg-body-secondary">
+    {% include 'nav_bar.html' %}
+    <div class="container mt-4">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+    <script src="https://kit.fontawesome.com/f89f8ae43b.js" crossorigin="anonymous"></script>
+  </body>
+</html>

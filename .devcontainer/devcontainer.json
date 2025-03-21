@@ -46,7 +46,10 @@
 				"KevinRose.vsc-python-indent",
 				"littlefoxteam.vscode-python-test-adapter",
 				"mechatroner.rainbow-csv",
-				"qwtel.sqlite-viewer"
+				"qwtel.sqlite-viewer",
+				"WaseemAkram.jinja-snippets-flask",
+				"wholroyd.jinja",
+				"thebarkman.vscode-djaneiro"
 			]
 		}
 	},

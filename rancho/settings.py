@@ -58,7 +58,11 @@ INSTALLED_APPS = [
     "forma_pago.apps.FormaPagoConfig",
     "admon.apps.AdmonConfig",
     "catalogo_cuenta.apps.CatalogoCuentaConfig",
+    "dashboard.apps.DashboardConfig",
+    "user.apps.UserConfig",
     # Third-party apps
+    "django_unicorn",
+    "django_bootstrap5"
     
 ]
 
