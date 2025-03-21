@@ -15,3 +15,7 @@ class ViewStatsView(UnicornView):
         self.ingreso = sum([ingreso.monto for ingreso in ingresos])
         self.gasto = sum([gasto.monto for gasto in gastos])
         self.balance = self.ingreso - self.gasto
+        # Separar el balance con comas
+        self.balance = "{:,}".format(self.balance)
+        self.ingreso = "{:,}".format(self.ingreso)
+        self.gasto = "{:,}".format(self.gasto)
